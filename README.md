@@ -70,10 +70,6 @@ portfolio(year) = starting portfolio + EV per trade × trades per year × year
 3. Copy the three files into that folder
 4. Open Obsidian → Settings → Community Plugins → enable **Calculators**
 
-### BRAT (Beta Reviewers Auto-update Tool)
-
-Add `jwplatta/obsidian-calculators` as a beta plugin via the [BRAT plugin](https://github.com/TfTHacker/obsidian42-brat).
-
 ## Development
 
 **Prerequisites:** Node.js 18+
