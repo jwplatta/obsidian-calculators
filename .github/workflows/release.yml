@@ -40,7 +40,7 @@ jobs:
 
       - name: Bump version
         run: |
-          npm version ${{ github.event.inputs.version }}
+          npm version ${{ github.event.inputs.version }} --allow-same-version
 
       - name: Push version commit and tag
         run: git push --follow-tags
