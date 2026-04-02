@@ -1,0 +1,10 @@
+{
+	"id": "obsidian-calculators",
+	"name": "Calculators",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "Financial and mathematical calculators with live charts, saveable to your vault.",
+	"author": "Joseph Platta",
+	"authorUrl": "",
+	"isDesktopOnly": false
+}

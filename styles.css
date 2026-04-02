@@ -1,0 +1,292 @@
+/* Calculators Plugin Styles */
+
+.calc-container {
+  padding: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: var(--font-interface);
+}
+
+.calc-title {
+  margin-bottom: 20px;
+  font-size: 1.4em;
+  font-weight: 600;
+  color: var(--text-normal);
+}
+
+/* Form */
+.calc-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.calc-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.calc-field-toggle {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.calc-field-label {
+  font-size: 0.9em;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.calc-required {
+  color: var(--text-error);
+}
+
+/* Slider */
+.calc-slider-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.calc-slider {
+  flex: 1;
+  accent-color: var(--interactive-accent);
+}
+
+.calc-slider-value {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.calc-number-input {
+  width: 80px;
+  padding: 4px 8px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  background: var(--background-primary);
+  color: var(--text-normal);
+  font-size: 0.9em;
+  text-align: right;
+}
+
+.calc-suffix {
+  font-size: 0.85em;
+  color: var(--text-muted);
+  min-width: 28px;
+}
+
+/* Select */
+.calc-select {
+  padding: 6px 10px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  background: var(--background-primary);
+  color: var(--text-normal);
+  font-size: 0.9em;
+}
+
+/* Toggle */
+.calc-toggle {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--interactive-accent);
+  cursor: pointer;
+}
+
+/* Summary */
+.calc-summary {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  background: var(--background-secondary);
+  border-radius: 8px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.calc-summary-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 140px;
+}
+
+.calc-summary-label {
+  font-size: 0.8em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.calc-summary-value {
+  font-size: 1.3em;
+  font-weight: 600;
+  color: var(--text-normal);
+}
+
+.calc-summary-total {
+  color: var(--interactive-accent);
+}
+
+.calc-summary-interest {
+  color: var(--color-green);
+}
+
+/* Chart */
+.calc-chart {
+  margin-bottom: 24px;
+}
+
+/* Actions */
+.calc-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.calc-save-btn {
+  padding: 8px 20px;
+  font-size: 0.95em;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  font-weight: 500;
+}
+
+.calc-save-btn:hover {
+  background: var(--interactive-accent-hover);
+}
+
+/* Saved Calculators Table */
+.calc-table-container {
+  padding: 24px;
+  overflow-x: auto;
+}
+
+.calc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95em;
+}
+
+.calc-table th {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 2px solid var(--background-modifier-border);
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.85em;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.calc-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--background-modifier-border);
+  color: var(--text-normal);
+  vertical-align: middle;
+}
+
+.calc-table tr:hover td {
+  background: var(--background-secondary);
+}
+
+.calc-table-link {
+  background: none;
+  border: none;
+  padding: 2px 6px;
+  color: var(--interactive-accent);
+  cursor: pointer;
+  font-size: 0.95em;
+  text-decoration: underline;
+  text-align: left;
+}
+
+.calc-table-link:hover {
+  color: var(--interactive-accent-hover);
+}
+
+.calc-table-delete {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 0.9em;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.calc-table-delete:hover {
+  background: var(--background-modifier-error);
+  color: var(--text-error);
+}
+
+.calc-table-empty {
+  padding: 48px 24px;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+/* Options strategy extras */
+.calc-number-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.calc-prefix {
+  font-size: 0.9em;
+  color: var(--text-muted);
+}
+
+.calc-number-input--wide {
+  width: 140px;
+}
+
+.calc-form-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.calc-field--grow {
+  flex: 1;
+  min-width: 120px;
+}
+
+.calc-frequency-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.calc-field-hint {
+  font-size: 0.8em;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.calc-summary--options {
+  flex-wrap: wrap;
+}
+
+.calc-summary-sub {
+  font-size: 0.7em;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.calc-ev-positive {
+  color: var(--color-green, #059669);
+}
+
+.calc-ev-negative {
+  color: var(--text-error, #dc2626);
+}
