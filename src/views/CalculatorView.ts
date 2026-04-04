@@ -3,6 +3,7 @@ import { createRoot, Root } from 'react-dom/client';
 import React from 'react';
 import { CompoundInterestCalculator } from '../components/CompoundInterestCalculator';
 import { OptionsStrategyCalculator } from '../components/OptionsStrategyCalculator';
+import { KellyGrowthCalculator } from '../components/KellyGrowthCalculator';
 import type { SavedCalculator, CalculatorType, CalculatorParams } from '../types';
 import type CalculatorsPlugin from '../main';
 
@@ -64,6 +65,14 @@ export class CalculatorView extends ItemView {
     if (this.activeType === 'options-strategy') {
       this.root.render(
         React.createElement(OptionsStrategyCalculator, {
+          initialParams: this.loadedCalc?.params as any,
+          savedCalc: this.loadedCalc,
+          onSave: onSave as any,
+        })
+      );
+    } else if (this.activeType === 'kelly-growth') {
+      this.root.render(
+        React.createElement(KellyGrowthCalculator, {
           initialParams: this.loadedCalc?.params as any,
           savedCalc: this.loadedCalc,
           onSave: onSave as any,

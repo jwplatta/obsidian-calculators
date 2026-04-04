@@ -1,4 +1,4 @@
-export type CalculatorType = 'compound-interest' | 'options-strategy';
+export type CalculatorType = 'compound-interest' | 'options-strategy' | 'kelly-growth';
 
 export interface CompoundInterestParams {
   principal: number;
@@ -26,7 +26,16 @@ export interface OptionsStrategyParams {
   years: number;
 }
 
-export type CalculatorParams = CompoundInterestParams | OptionsStrategyParams;
+export interface KellyGrowthParams {
+  startingPortfolio: number;
+  sharpeRatio: number;
+  annualVolatility: number;
+  riskFreeRate: number;
+  leverage: number;
+  years: number;
+}
+
+export type CalculatorParams = CompoundInterestParams | OptionsStrategyParams | KellyGrowthParams;
 
 export interface SavedCalculator {
   id: string;
@@ -60,9 +69,27 @@ export interface OptionsSummary {
   finalPortfolio: number;
 }
 
+export interface KellyGrowthDataPoint {
+  year: number;
+  leveragedPortfolio: number;
+  unleveredPortfolio: number;
+}
+
+export interface KellyGrowthSummary {
+  expectedReturn: number;
+  excessReturn: number;
+  kellyLeverage: number;
+  growthRate: number;
+  unleveredGrowthRate: number;
+  leveragePctOfKelly: number;
+  finalLeveragedPortfolio: number;
+  finalUnleveredPortfolio: number;
+}
+
 export const CALCULATOR_TYPES: { id: CalculatorType; name: string }[] = [
   { id: 'compound-interest', name: 'Compound Interest Calculator' },
   { id: 'options-strategy', name: 'Options Strategy Calculator' },
+  { id: 'kelly-growth', name: 'Kelly Growth Calculator' },
 ];
 
 export const DEFAULT_COMPOUND_INTEREST_PARAMS: CompoundInterestParams = {
@@ -87,4 +114,13 @@ export const DEFAULT_OPTIONS_STRATEGY_PARAMS: OptionsStrategyParams = {
   frequencyValue: 1,
   frequencyUnit: 'week',
   years: 5,
+};
+
+export const DEFAULT_KELLY_GROWTH_PARAMS: KellyGrowthParams = {
+  startingPortfolio: 100000,
+  sharpeRatio: 0.8,
+  annualVolatility: 15,
+  riskFreeRate: 4,
+  leverage: 1,
+  years: 20,
 };

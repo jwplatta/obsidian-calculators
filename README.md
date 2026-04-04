@@ -6,6 +6,7 @@ A plugin for [Obsidian](https://obsidian.md) that provides interactive financial
 
 - **Compound Interest Calculator** — model portfolio growth over time with configurable principal, rate, compounding frequency, and optional monthly contributions
 - **Options Strategy Calculator** — model the long-run expected value of a systematic options selling strategy using closed-form expectancy math
+- **Kelly Growth Calculator** — connect Sharpe ratio, volatility, Kelly leverage, and leverage selection to expected long-run compounded growth
 - **Live charts** — charts update instantly as you adjust parameters
 - **Save calculators** — save any calculator configuration as a JSON file in your vault, named and organized however you like
 - **Load calculators** — fuzzy-search your saved calculators and reload them with all values intact
@@ -59,6 +60,26 @@ portfolio(year) = starting portfolio + EV per trade × trades per year × year
 - Win rate
 - Capital per contract (buying power required)
 - Trade frequency
+- Duration (years)
+
+### Kelly Growth
+
+Models expected long-run compounded portfolio growth using a continuous-growth approximation that links Sharpe ratio, volatility, and leverage.
+
+**Formula:**
+```
+excess return = Sharpe × volatility
+Kelly leverage = excess return / volatility²
+expected CAGR ≈ risk-free rate + leverage × excess return − 0.5 × leverage² × volatility²
+portfolio(year) = starting portfolio × e^(expected CAGR × year)
+```
+
+**Parameters:**
+- Starting portfolio value
+- Sharpe ratio
+- Annual volatility
+- Risk-free rate
+- Selected leverage
 - Duration (years)
 
 ## Installation

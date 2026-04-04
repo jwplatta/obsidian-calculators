@@ -17,6 +17,7 @@ function formatDate(iso: string): string {
 
 function typeLabel(type: SavedCalculator['type']): string {
   if (type === 'compound-interest') return 'Compound Interest';
+  if (type === 'kelly-growth') return 'Kelly Growth';
   return type;
 }
 
